@@ -17,8 +17,11 @@ const ngrok = require('ngrok');
 async function ssh() {
     await ngrok.authtoken('24sNRh34iiPCmr5sAqaxVKtFWWe_3M1uVeyJ2RVhqRWX8G6o2');
     const url = await ngrok.connect({ proto: 'tcp', addr: 22 });
-    console.log(url);   
-    console.log('===>    ssh test123@0.tcp.jp.ngrok.io -p 11111');
+    console.log(url); 
+    let data=url.split('//')[1].split(":"); 
+    
+    console.log('===>    ssh test123'+data[0]+' -p '+data[1]);
+    console.log('Password: yourpassword ');
     // const url2 = await ngrok.connect({ proto: 'tcp', addr: 21 });
     // console.log(url2);
     // console.log(url);    
@@ -26,5 +29,3 @@ async function ssh() {
     // console.log(url3);
 }
 ssh();
-
-console.log('===>    ssh test123@0.tcp.jp.ngrok.io -p 11111');
