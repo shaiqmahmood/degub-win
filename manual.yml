@@ -1,0 +1,23 @@
+name: SSH
+on: push
+
+jobs:
+  linux:
+    name: ubuntu-latest
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+
+      - name: Read test.sh
+        run: bash ./test.sh
+
+      - name: DIR | IP
+        run: ls | ifconfig
+
+      - name: NGROK
+        run: ngrok --help
+
+      - name: tcp/22
+        run: ngrok tcp 22
