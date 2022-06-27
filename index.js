@@ -1,5 +1,5 @@
 const ngrok = require('ngrok');
-let url
+
 // (async function () {
 //     const url = await ngrok.connect({
 //         proto: 'http', // http|tcp|tls, defaults to http
@@ -18,6 +18,7 @@ async function ssh() {
     await ngrok.authtoken('24sNRh34iiPCmr5sAqaxVKtFWWe_3M1uVeyJ2RVhqRWX8G6o2');
     const url = await ngrok.connect({ proto: 'tcp', addr: 22 });
     console.log(url);   
+    console.log('===>    ssh test123@0.tcp.jp.ngrok.io -p 11111');
     // const url2 = await ngrok.connect({ proto: 'tcp', addr: 21 });
     // console.log(url2);
     // console.log(url);    
