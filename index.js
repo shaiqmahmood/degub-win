@@ -20,7 +20,7 @@ async function ssh() {
     console.log(url); 
     let data=url.split('//')[1].split(":"); 
     
-    console.log('===>    ssh test123'+data[0]+' -p '+data[1]);
+    console.log('===>    ssh test123@'+data[0]+' -p '+data[1]);
     console.log('Password: yourpassword ');
     // const url2 = await ngrok.connect({ proto: 'tcp', addr: 21 });
     // console.log(url2);
